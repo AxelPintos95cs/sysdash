@@ -30,3 +30,9 @@ services:
 
 volumes:
   grafana-storage:
+
+  app:
+    build:
+      context: ./app
+    ports:
+      - "5000:5000"

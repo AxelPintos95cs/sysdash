@@ -21,7 +21,8 @@ Este proyecto configura un entorno completo de monitoreo de sistemas usando:
 
 ---
 
-🔐 Seguridad y producción
+### 🔐 Seguridad y producción
+
 Este proyecto está pensado para uso local o ambientes controlados. Para producción se recomienda:
 
 Autenticación reforzada en Grafana
@@ -44,6 +45,8 @@ cd system-monitoring-dashboard
 docker compose up -d
 ```
 
+---
+
 ## Cómo usar Grafana
 Acceder a Grafana en: http://localhost:3000
 
@@ -55,8 +58,12 @@ Data Source: Prometheus
 
 Dashboard: Node Exporter Full (importado automáticamente desde system-dashboard.json)
 
+---
+
 ## Autor
 
 🧠 Axel Pintos
 
 💼 SysAdmin Jr. | DevOps en formación
+
+---
