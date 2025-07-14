@@ -1,0 +1,14 @@
+global:
+  smtp_smarthost: 'smtp.gmail.com:587'
+  smtp_from: 'alertas@example.com'
+  smtp_auth_username: 'alertas@example.com'
+  smtp_auth_password: '{{EMAIL_PASSWORD}}'  
+
+route:
+  receiver: email-alert
+
+receivers:
+  - name: email-alert
+    email_configs:
+      - to: '{{USER_EMAIL}}'  
+        send_resolved: true

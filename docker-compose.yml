@@ -8,6 +8,13 @@ services:
       - "5000:5000"
     restart: always
 
+  alertmanager:
+    image: prom/alertmanager:latest
+    ports:
+      - "9093:9093"
+    volumes:
+      - ./alertmanager/:/etc/alertmanager
+
   prometheus:
     image: prom/prometheus:latest
     ports:

@@ -1,0 +1,20 @@
+groups:
+  - name: app_alerts
+    rules:
+      - alert: AppDown
+        expr: up{job="flask-app"} == 0
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: "La app Flask no responde"
+          description: "La app ha dejado de responder en {{ $labels.instance }}"
+
+      - alert: HighLatency
+        expr: histogram_quantile(0.95, rate(app_request_latency_seconds_bucket[1m])) > 0.5
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Alta latencia en la app"
+          description: "El percentil 95 de latencia excede 0.5 segundos"
