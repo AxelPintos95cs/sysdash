@@ -1,2 +1,5 @@
 flask
 prometheus_client
+pytest
+requests
+psycopg2-binary

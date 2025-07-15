@@ -1,5 +1,5 @@
-user_email = input("📧 Ingresá tu correo para recibir alertas: ")
-email_pass = input("🔐 Ingresá la contraseña del remitente (ej: alertas@example.com): ")
+user_email = input("Ingresá tu correo para recibir alertas: ")
+email_pass = input("Ingresá la contraseña del remitente (ej: alertas@example.com): ")
 
 template_path = "./alertmanager/config.yml"
 output_path = "./alertmanager/config.yml"
