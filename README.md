@@ -1,4 +1,4 @@
-# 🖥️ System Monitoring Dashboard (Prometheus + Grafana)
+# System Monitoring Dashboard (Prometheus + Grafana)
 
 Este proyecto configura un entorno completo de monitoreo de sistemas usando:
 

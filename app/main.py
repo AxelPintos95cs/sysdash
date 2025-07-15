@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
-import os, psycopg2
+import os
+import psycopg2
 from prometheus_client import Counter, Histogram, generate_latest, CONTENT_TYPE_LATEST
 import time
 
