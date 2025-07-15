@@ -1,4 +1,4 @@
-from app import app
+from main import app
 
 def test_health():
     client = app.test_client()
@@ -15,7 +15,6 @@ def test_create_user():
 
 def test_get_users():
     client = app.test_client()
-    # Primero crear usuario para asegurar que no esté vacío
     client.post("/users", json={"name": "Test", "email": "test@example.com"})
     response = client.get("/users")
     assert response.status_code == 200
