@@ -6,6 +6,6 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
-COPY ../tests /app/tests
+COPY tests /app/tests
 
 CMD ["python", "main.py"]
