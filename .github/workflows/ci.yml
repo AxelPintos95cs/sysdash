@@ -45,8 +45,8 @@ jobs:
       - name: Levantar servicios en segundo plano
         run: docker compose up -d
 
-      - name: Ejecutar tests
-        run: docker compose run --rm app pytest tests
+      - name: Ejecutar tests dentro del contenedor
+        run: docker compose exec -T app pytest tests
 
       - name: Apagar servicios
         run: docker compose down -v
