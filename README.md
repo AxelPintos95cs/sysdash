@@ -60,6 +60,11 @@ Dashboard: Node Exporter Full (importado automáticamente desde system-dashboard
 
 ---
 
+## Tests y CI
+Este repositorio incluye integración continua (CI) con GitHub Actions para ejecutar tests automáticos con pytest en cada push a la rama master.
+
+---
+
 ## Autor
 
 🧠 Axel Pintos
