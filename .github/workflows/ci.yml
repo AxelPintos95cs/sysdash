@@ -10,21 +10,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    services:
-      postgres:
-        image: postgres:15
-        env:
-          POSTGRES_DB: app_db
-          POSTGRES_USER: user
-          POSTGRES_PASSWORD: password
-        ports:
-          - 15432:5432
-        options: >-
-          --health-cmd="pg_isready -U user -d app_db"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=5
-
     steps:
       - name: Checkout código
         uses: actions/checkout@v4
@@ -37,13 +22,11 @@ jobs:
       - name: Build de los servicios
         run: docker compose -f docker-compose.yml build
 
-      - name: Esperar a que la base de datos esté lista
-        run: |
-          echo "Esperando 15 segundos que postgres esté disponible..."
-          sleep 15
-
       - name: Levantar servicios en segundo plano
-        run: docker compose up -d
+        run: docker compose -f docker-compose.yml up -d
+
+      - name: Esperar a que la base de datos esté lista
+        run: sleep 15
 
       - name: Ejecutar tests dentro del contenedor
         run: docker compose exec -T app pytest tests

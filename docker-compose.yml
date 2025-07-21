@@ -16,7 +16,7 @@ services:
   postgres:
     image: postgres:15
     ports:
-      - "15432:5432"
+      - "15433:5432"
     environment:
       - POSTGRES_DB=app_db
       - POSTGRES_USER=user
